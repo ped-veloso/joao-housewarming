@@ -4,77 +4,134 @@
   <meta charset="UTF-8">
   <title>Chá de la Panella Joao bday 🎁</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: sans-serif;
-      background: #f0f0f0;
-      text-align: center;
-      padding: 2rem;
-    }
-    h1, h2 {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #fff);
       color: #333;
+      padding: 2rem;
+      margin: 0;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .header:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+    .header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid #28a745;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0.5rem 0;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #555;
+    }
+    p {
+      max-width: 600px;
+      margin: 0.5rem auto;
+      font-size: 1rem;
     }
     .donate {
       background: #fff3cd;
-      padding: 1rem;
-      margin: 1rem auto;
-      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin: 2rem auto;
+      border-radius: 12px;
       display: inline-block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      font-size: 1rem;
     }
     .controls {
-      margin: 1.5rem auto;
+      margin: 2rem auto 1rem;
+    }
+    .controls select {
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
     }
     .gift-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
       margin-top: 2rem;
     }
     .gift {
       background: white;
       padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    .gift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     }
     .gift img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
     }
     .gift h3 {
       margin: 1rem 0 0.5rem;
+      font-weight: 600;
     }
     .gift p {
-      margin: 0.3rem 0;
+      margin: 0.2rem 0;
+      font-size: 0.95rem;
     }
     .gift button {
       margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: bold;
       background-color: #28a745;
       color: white;
       cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .gift button:hover {
+      background-color: #218838;
     }
   </style>
 </head>
 <body>
+  <div class="header">
+    <img src="https://profile-images.xing.com/images/64aa9daed34ebca390ad7fd080ccb960-2/joao-paulo-alasmar-cordeiro.256x256.jpg" alt="João Paulo">
+    <h1>🍳  Chá de la Panella Joao bday</h1>
+    <h2>🎁 CASA NOVA, VIDA NOVA </h2>
+  </div>
 
-  <h1>🎉 Chá de la Panella Joao bday</h1>
-  <h2>🎁 Nosso presente de aniversario e nova residencia</h2>
-  <p>SIM, O aniversário do João já passou faz tempo, mas a nossa intencão de dar um presente SEGUE FIRME. 
-          ...
-          Por isso, preparamos essa página com presentes e items pra rechear a sua nova residencia em Barcelona.   
-          ...
-          Um "Chá de La Panella" como fazem tradicionalmente os catalaes. 
-          ...
-          Escolha seu "produto" favorito ou envie uma contribuição direta pro nosso fundo.<br>
+  <p>SIM, o aniversário do João já passou faz tempo, mas a nossa intenção de dar um presente SEGUE FIRME.</p>
+  <p>Por isso, preparamos essa página com presentes e itens simbólicos pra rechear a nova residência dele em Barcelona.</p>
+  <p>Um "Chá de La Panella", como fazem tradicionalmente os catalães.</p>
+  <p>Escolha seu "produto" favorito ou envie uma contribuição direta pro nosso fundo.</p>
 
   <div class="donate">
     <p><strong>Revolut:</strong> ES1015830001169050504097<br>João Paulo Alasmar Cordeiro</p>
-    <p><a href="https://www.paypal.com/pool/9eayx44IJi?sr=wccr" target="_blank">Ou pagar pelo PayPal | Or pay via PayPal</a></p>
+    <p><a href="https://www.paypal.com/pool/9eayx44IJi?sr=wccr" target="_blank">Ou contribua pra nossa vaquinha no PayPal</a></p>
   </div>
 
   <div class="controls">
@@ -92,85 +149,85 @@
     const paymentLink = "https://www.paypal.com/pool/9eayx44IJi?sr=wccr";
 
     const gifts = [
-      {
-        name: "Churrasqueira de qualidade / BBQ Grill",
-        image: "https://i.postimg.cc/fkLqQGyy/bbq.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Camisa EU SOU CARIOCA --- pra continuar manifestando!",
-        image: "https://i.postimg.cc/mzZXDqSd/carioca.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Roupa de cama gostosa pras visitas :) / Comfy Bedding",
-        image: "https://i.postimg.cc/sQnnZc63/cama.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Fantasia do CarnaJão / Carnival Costume",
-        image: "https://i.postimg.cc/CZg6ydnp/carnajao.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Aulas de Espanhol / Spanish Lessons",
-        image: "https://i.postimg.cc/XrFDD9Jg/espanhol.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Aulas de Catalão / Catalan Lessons",
-        image: "https://i.postimg.cc/0rW368F7/catalao.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Vaquinha: amigos vindo de Berlim / Fund: friends flying from Berlin",
-        image: "https://i.postimg.cc/TpKsgzvF/berlim.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Vaquinha: João indo pra Berlim / Fund: João flies to Berlin",
-        image: "https://i.postimg.cc/6T5g57j9/joaoberlim.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Flores pros seus novos vizinhos / Flowers for the neighbors",
-        image: "https://i.postimg.cc/kR4pjZ6V/flores.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Aulas de Vôlei - Brazilian Way / Volleyball",
-        image: "https://i.postimg.cc/G8zfxr2w/volei.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Consultoria de Design / Interior Design Help",
-        image: "https://i.postimg.cc/HcTKMjT9/design.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Bloqueador de Ruído (Anti Vizinho) / Noise Blocker",
-        image: "https://i.postimg.cc/f3n1wBFF/ruido.jpg",
-        count: 0,
-        lastPurchased: null
-      },
-      {
-        name: "Vinyl da Anitta",
-        image: "https://i.postimg.cc/0jD9N47V/anitta.jpg",
-        count: 0,
-        lastPurchased: null
-      }
-    ];
+  {
+    name: "Churrasqueira de qualidade / BBQ Grill",
+    image: "https://i.postimg.cc/fkLqQGyy/bbq.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Cerificado de Carioca chancelado pelo Dudu Paes!",
+    image: "https://i.postimg.cc/4NrdP3Sg/2025-04-21-15-00-59-Untitled-presentation-Google-Slides.png",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Roupa de cama gostosa praR visitas na casa nova",
+    image: "https://i.postimg.cc/sQnnZc63/cama.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Fantasia do CarnaJão: Joao de Batman",
+    image: "https://i.postimg.cc/CZg6ydnp/carnajao.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Aulas de Espanhol",
+    image: "https://i.postimg.cc/XrFDD9Jg/espanhol.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Aulas de Catalão",
+    image: "https://i.postimg.cc/0rW368F7/catalao.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Vaquinha: amigos de Berlin te visitar em BCN",
+    image: "https://i.postimg.cc/TpKsgzvF/berlim.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Vaquinha: João indo pra Berlim",
+    image: "https://i.postimg.cc/6T5g57j9/joaoberlim.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Flores pros seus novos vizinhos",
+    image: "https://i.postimg.cc/kR4pjZ6V/flores.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Aulas de Vôlei - Brazilian Way",
+    image: "https://i.postimg.cc/G8zfxr2w/volei.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Consultoria de Design Interiores",
+    image: "https://i.postimg.cc/HcTKMjT9/design.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Bloqueador de Ruído (Anti Vizinho)",
+    image: "https://i.postimg.cc/f3n1wBFF/ruido.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Vinyl da Anitta",
+    image: "https://i.postimg.cc/0jD9N47V/anitta.jpg",
+    count: 0,
+    lastPurchased: null
+  }
+];
 
     function markAsPurchased(index) {
       gifts[index].count++;
