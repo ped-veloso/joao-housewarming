@@ -119,4 +119,67 @@
         taken: false
       },
       {
-        name: "Primeira Caixa de Cerveja / First
+        name: "Primeira Caixa de Cerveja / First Beer Crate",
+        image: "https://images.unsplash.com/photo-1598511720891-80be6b6faad7",
+        taken: false
+      },
+      {
+        name: "Roupa de Cama Gostosa pros Amigos / Comfy Guest Bedding",
+        image: "https://images.unsplash.com/photo-1615873968403-89e068629265",
+        taken: false
+      },
+      {
+        name: "Churrasqueira / BBQ Grill",
+        image: "https://images.unsplash.com/photo-1590080877035-33e9e2d8bc8d",
+        taken: false
+      },
+      {
+        name: "Designer (Consultoria) / Interior Design Help",
+        image: "https://images.unsplash.com/photo-1618221736457-7be3d7a8d90a",
+        taken: false
+      },
+      {
+        name: "Ajuda no Financiamento da Casa / Help with House Payments",
+        image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e",
+        taken: false
+      },
+      {
+        name: "Alguma Coisa Inusitada / Something Unexpected",
+        image: "https://images.unsplash.com/photo-1603899121265-3b35d2e0bc55",
+        taken: false
+      },
+      {
+        name: "Tóxicos e Entorpecentes (de mentira) / Fake Party Drugs",
+        image: "https://images.unsplash.com/photo-1581092335286-67d4b3c7faac",
+        taken: false
+      }
+    ];
+
+    function renderGifts() {
+      const container = document.getElementById("gift-list");
+      container.innerHTML = "";
+
+      gifts.forEach((gift, index) => {
+        const div = document.createElement("div");
+        div.className = "gift";
+        div.innerHTML = `
+          <img src="${gift.image}" alt="${gift.name}">
+          <h3>${gift.name}</h3>
+          <button class="${gift.taken ? 'taken' : 'available'}" ${gift.taken ? 'disabled' : ''} onclick="markAsTaken(${index})">
+            ${gift.taken ? 'Já foi escolhido / Taken' : 'Quero dar este / I’ll buy this'}
+          </button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function markAsTaken(index) {
+      gifts[index].taken = true;
+      renderGifts();
+      window.open(paymentLink, "_blank");
+    }
+
+    renderGifts();
+  </script>
+</body>
+</html>
