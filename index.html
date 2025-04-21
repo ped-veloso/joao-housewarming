@@ -54,29 +54,15 @@
     }
     .donate {
       background: #fff3cd;
-      padding: 1.5rem;
+      padding: 1.2rem 1.5rem;
       margin: 2rem auto;
       border-radius: 12px;
-      text-align: center;
+      display: inline-block;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       font-size: 1rem;
-      max-width: 500px;
-    }
-    .countdown {
-      background-color: #ffffff;
-      color: #d32f2f;
-      font-size: 1.5rem;
-      font-weight: 600;
-      text-align: center;
-      padding: 1rem;
-      margin: 2rem auto;
-      border: 2px dashed #d32f2f;
-      border-radius: 12px;
-      max-width: 400px;
     }
     .controls {
       margin: 2rem auto 1rem;
-      text-align: center;
     }
     .controls select {
       padding: 0.5rem;
@@ -140,19 +126,12 @@
 
   <p>SIM, o aniversário do João já passou faz tempo, mas a nossa intenção de dar um presente SEGUE FIRME.</p>
   <p>Por isso, preparamos essa página com presentes e itens simbólicos pra rechear a nova residência dele em Barcelona.</p>
-  <p>Um classico --> "Chá de La Panella", como chamam tradicionalmente os catalães esse tipo de evento.</p>
+  <p>Um "Chá de La Panella", como fazem tradicionalmente os catalães.</p>
   <p>Escolha seu "produto" favorito ou envie uma contribuição direta pro nosso fundo.</p>
-  <p>...</p>
-  <p>Qualquer dúvida, fale com o Pedro Veloso</p>
-
-  <div class="countdown" id="countdown">
-    ⏰ A vaquinha termina em <span id="time"></span>
-  </div>
 
   <div class="donate">
-    <p><strong>Contribuição direta → banco do João</strong><br>Revolut: ES1015830001169050504097<br>João Paulo Alasmar Cordeiro</p>
-    <p><strong>Contribuição pro nosso fundo do PayPal → enviaremos depois</strong><br>
-    <a href="https://www.paypal.com/pool/9eayx44IJi?sr=wccr" target="_blank">Link do PayPal</a></p>
+    <p><strong>Revolut:</strong> ES1015830001169050504097<br>João Paulo Alasmar Cordeiro</p>
+    <p><a href="https://www.paypal.com/pool/9eayx44IJi?sr=wccr" target="_blank">Ou contribua pra nossa vaquinha no PayPal</a></p>
   </div>
 
   <div class="controls">
@@ -169,31 +148,86 @@
   <script>
     const paymentLink = "https://www.paypal.com/pool/9eayx44IJi?sr=wccr";
 
-    const deadline = new Date();
-    deadline.setDate(deadline.getDate() + 7);
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = deadline - now;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / 1000 / 60) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("time").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-
     const gifts = [
-      {
-        name: "Vinyl da Anitta",
-        image: "https://i.postimg.cc/0jD9N47V/anitta.jpg",
-        count: 0,
-        lastPurchased: null
-      }
-    ];
+  {
+    name: "Churrasqueira de qualidade / BBQ Grill",
+    image: "https://i.postimg.cc/fkLqQGyy/bbq.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Cerificado de Carioca chancelado pelo Dudu Paes!",
+    image: "https://i.postimg.cc/4NrdP3Sg/2025-04-21-15-00-59-Untitled-presentation-Google-Slides.png",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Roupa de cama gostosa praR visitas na casa nova",
+    image: "https://i.postimg.cc/sQnnZc63/cama.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Fantasia do CarnaJão: Joao de Batman",
+    image: "https://i.postimg.cc/CZg6ydnp/carnajao.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Aulas de Espanhol",
+    image: "https://i.postimg.cc/XrFDD9Jg/espanhol.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Aulas de Catalão",
+    image: "https://i.postimg.cc/0rW368F7/catalao.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Vaquinha: amigos de Berlin te visitar em BCN",
+    image: "https://i.postimg.cc/TpKsgzvF/berlim.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Vaquinha: João indo pra Berlim",
+    image: "https://i.postimg.cc/6T5g57j9/joaoberlim.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Flores pros seus novos vizinhos",
+    image: "https://i.postimg.cc/kR4pjZ6V/flores.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Aulas de Vôlei - Brazilian Way",
+    image: "https://i.postimg.cc/G8zfxr2w/volei.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Consultoria de Design Interiores",
+    image: "https://i.postimg.cc/HcTKMjT9/design.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Bloqueador de Ruído (Anti Vizinho)",
+    image: "https://i.postimg.cc/f3n1wBFF/ruido.jpg",
+    count: 0,
+    lastPurchased: null
+  },
+  {
+    name: "Vinyl da Anitta",
+    image: "https://i.postimg.cc/0jD9N47V/anitta.jpg",
+    count: 0,
+    lastPurchased: null
+  }
+];
 
     function markAsPurchased(index) {
       gifts[index].count++;
