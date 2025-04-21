@@ -2,40 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>João's Bota Dentro 🎉</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>João’s Housewarming Gifts 🎁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       font-family: sans-serif;
+      background: #f0f0f0;
       text-align: center;
       padding: 2rem;
-      background: #f9f9f9;
     }
-    .box {
+    h1 {
+      margin-bottom: 1rem;
+    }
+    .donate {
+      background: #fff3cd;
+      padding: 1rem;
+      margin: 1rem auto;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .gift-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .gift {
       background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: auto;
+      padding: 1rem;
+      border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #4CAF50;
-      color: white;
-      padding: 1rem 2rem;
-      text-decoration: none;
+    .gift img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .gift h3 {
+      margin: 1rem 0 0.5rem;
+    }
+    .gift button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: none;
       border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .gift button.available {
+      background-color: #28a745;
+      color: white;
+    }
+    .gift button.taken {
+      background-color: #ccc;
+      color: #666;
+      cursor: not-allowed;
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Contribute to João's Housewarming 🎁</h1>
-    <p>Let’s give João a warm start in his new place!</p>
-    <p><strong>Contribute via Pix or another method below:</strong></p>
-    <a class="button" href="https://example.com">Send Contribution</a>
+
+  <h1>🎉 João's Housewarming</h1>
+  <p>Pick a gift or send him a contribution directly.</p>
+
+  <div class="donate">
+    <p><strong>Pix:</strong> joao@email.com</p>
+    <p><a href="https://example.com" target="_blank">Pay with PayPal</a></p>
   </div>
+
+  <div class="gift-grid" id="gift-list">
+    <!-- Gifts will be inserted here -->
+  </div>
+
+  <script>
+    const paymentLink = "https://example.com"; // change this to João’s real payment link
+
+    const gifts = [
+      {
+        name: "Toaster",
+        image: "https://images.unsplash.com/photo-1586201375761-83865001e17b",
+        taken: false
+      },
+      {
+        name: "Wine Glass Set",
+        image: "https://images.unsplash.com/photo-1588854337236-6882646e2e4d",
+        taken: false
+      },
+      {
+        name: "Cozy Blanket",
+        image: "https://images.unsplash.com/photo-1605792657660-596af9009e91",
+        taken: false
+      },
+      {
+        name: "Plant Pot",
+        image: "https://images.unsplash.com/photo-1587502537745-84b94fc2ad28",
+        taken: false
+      }
+    ];
+
+    function renderGifts() {
+      const container = document.getElementById("gift-list");
+      container.innerHTML = "";
+
+      gifts.forEach((gift, index) => {
+        const div = document.createElement("div");
+        div.className = "gift";
+        div.innerHTML = `
+          <img src="${gift.image}" alt="${gift.name}">
+          <h3>${gift.name}</h3>
+          <button class="${gift.taken ? 'taken' : 'available'}" ${gift.taken ? 'disabled' : ''} onclick="markAsTaken(${index})">
+            ${gift.taken ? 'Taken' : 'I’ll buy this'}
+          </button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function markAsTaken(index) {
+      gifts[index].taken = true;
+      renderGifts();
+      window.open(paymentLink, "_blank");
+    }
+
+    renderGifts();
+  </script>
 </body>
 </html>
+
