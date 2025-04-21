@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>João’s Housewarming Gifts 🎁</title>
+  <title>Presentes para o João 🎁</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
@@ -12,7 +12,11 @@
       padding: 2rem;
     }
     h1 {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #555;
     }
     .donate {
       background: #fff3cd;
@@ -63,70 +67,56 @@
 </head>
 <body>
 
-  <h1>🎉 João's Housewarming</h1>
-  <p>Pick a gift or send him a contribution directly.</p>
+  <h1>🎉 Presentes para o João</h1>
+  <h2>🎁 João's Housewarming Gift List</h2>
+  <p>Escolha um presente ou envie uma contribuição direta por Pix ou PayPal.<br>
+     Pick a gift or send a direct contribution via Pix or PayPal.</p>
 
   <div class="donate">
     <p><strong>Pix:</strong> joao@email.com</p>
-    <p><a href="https://example.com" target="_blank">Pay with PayPal</a></p>
+    <p><a href="https://example.com" target="_blank">Ou pagar pelo PayPal | Or pay via PayPal</a></p>
   </div>
 
-  <div class="gift-grid" id="gift-list">
-    <!-- Gifts will be inserted here -->
-  </div>
+  <div class="gift-grid" id="gift-list"></div>
 
   <script>
-    const paymentLink = "https://example.com"; // change this to João’s real payment link
+    const paymentLink = "https://example.com"; // substitua pelo link real
 
     const gifts = [
       {
-        name: "Toaster",
-        image: "https://images.unsplash.com/photo-1586201375761-83865001e17b",
+        name: "Mural da Torre de TV de Berlim / Berlin TV Tower Wall Art",
+        image: "https://images.unsplash.com/photo-1597848212624-57a4e36975b1",
         taken: false
       },
       {
-        name: "Wine Glass Set",
-        image: "https://images.unsplash.com/photo-1588854337236-6882646e2e4d",
+        name: "Areia de Ipanema / Ipanema Beach Sand",
+        image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620",
         taken: false
       },
       {
-        name: "Cozy Blanket",
-        image: "https://images.unsplash.com/photo-1605792657660-596af9009e91",
+        name: "Cigarro de Palha / Brazilian Straw Cigarettes",
+        image: "https://images.unsplash.com/photo-1568922799850-2e8b6e003a91",
         taken: false
       },
       {
-        name: "Plant Pot",
-        image: "https://images.unsplash.com/photo-1587502537745-84b94fc2ad28",
+        name: "Whey Protein",
+        image: "https://images.unsplash.com/photo-1621996346565-08ccf999f44f",
         taken: false
-      }
-    ];
-
-    function renderGifts() {
-      const container = document.getElementById("gift-list");
-      container.innerHTML = "";
-
-      gifts.forEach((gift, index) => {
-        const div = document.createElement("div");
-        div.className = "gift";
-        div.innerHTML = `
-          <img src="${gift.image}" alt="${gift.name}">
-          <h3>${gift.name}</h3>
-          <button class="${gift.taken ? 'taken' : 'available'}" ${gift.taken ? 'disabled' : ''} onclick="markAsTaken(${index})">
-            ${gift.taken ? 'Taken' : 'I’ll buy this'}
-          </button>
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    function markAsTaken(index) {
-      gifts[index].taken = true;
-      renderGifts();
-      window.open(paymentLink, "_blank");
-    }
-
-    renderGifts();
-  </script>
-</body>
-</html>
-
+      },
+      {
+        name: "Bola de Vôlei / Volleyball",
+        image: "https://images.unsplash.com/photo-1599058917211-bc3a8f3bc19a",
+        taken: false
+      },
+      {
+        name: "Bloqueador de Ruídos para Apartamentos / Noise Canceller",
+        image: "https://images.unsplash.com/photo-1585386959984-a4155224a7da",
+        taken: false
+      },
+      {
+        name: "Flores para os Novos Vizinhos / Flowers for New Neighbors",
+        image: "https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0",
+        taken: false
+      },
+      {
+        name: "Primeira Caixa de Cerveja / First
