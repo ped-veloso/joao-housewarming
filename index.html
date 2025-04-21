@@ -185,6 +185,53 @@
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    const gifts = [
+      {
+        name: "Vinyl da Anitta",
+        image: "https://i.postimg.cc/0jD9N47V/anitta.jpg",
+        count: 0,
+        lastPurchased: null
+      }
+    ];
+
+    function markAsPurchased(index) {
+      gifts[index].count++;
+      gifts[index].lastPurchased = new Date();
+      renderGifts();
+      window.open(paymentLink, "_blank");
+    }
+
+    function sortGifts() {
+      const sortType = document.getElementById("sort").value;
+      if (sortType === "popularity") {
+        gifts.sort((a, b) => b.count - a.count);
+      } else if (sortType === "recent") {
+        gifts.sort((a, b) => new Date(b.lastPurchased || 0) - new Date(a.lastPurchased || 0));
+      } else {
+        gifts.sort((a, b) => a.name.localeCompare(b.name));
+      }
+      renderGifts();
+    }
+
+    function renderGifts() {
+      const container = document.getElementById("gift-list");
+      container.innerHTML = "";
+      gifts.forEach((gift, index) => {
+        const div = document.createElement("div");
+        div.className = "gift";
+        div.innerHTML = `
+          <img src="${gift.image}" alt="${gift.name}">
+          <h3>${gift.name}</h3>
+          <p>Contribuições: ${gift.count}</p>
+          <p>Última: ${gift.lastPurchased ? new Date(gift.lastPurchased).toLocaleString() : '-'}</p>
+          <button onclick="markAsPurchased(${index})">Contribuir / Contribute</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    renderGifts();
   </script>
 </body>
 </html>
