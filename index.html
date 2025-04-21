@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Chá de la Panella João</title>
+  <title>Chá de la Panella Joao bday 🎁</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
@@ -169,8 +169,7 @@
   <script>
     const paymentLink = "https://www.paypal.com/pool/9eayx44IJi?sr=wccr";
 
-    const deadline = new Date();
-    deadline.setDate(deadline.getDate() + 7);
+    const deadline = new Date("2024-04-27T23:59:00");
 
     function updateCountdown() {
       const now = new Date();
@@ -203,6 +202,7 @@
     function markAsPurchased(index) {
       gifts[index].count++;
       gifts[index].lastPurchased = new Date();
+      localStorage.setItem('gifts', JSON.stringify(gifts));
       renderGifts();
       window.open(paymentLink, "_blank");
     }
