@@ -1,3 +1,4 @@
+<!-- CÓDIGO HTML CORRIGIDO COM IMAGENS FUNCIONANDO -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -85,101 +86,19 @@
     const gifts = [
       {
         name: "Mural da Torre de TV de Berlim / Berlin TV Tower Wall Art",
-        image: "https://images.unsplash.com/photo-1597848212624-57a4e36975b1",
+        image: "https://images.unsplash.com/photo-1597848212624-57a4e36975b1?auto=format&fit=crop&w=800&q=80",
         taken: false
       },
       {
         name: "Areia de Ipanema / Ipanema Beach Sand",
-        image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620",
+        image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=80",
         taken: false
       },
       {
         name: "Cigarro de Palha / Brazilian Straw Cigarettes",
-        image: "https://images.unsplash.com/photo-1568922799850-2e8b6e003a91",
+        image: "https://images.unsplash.com/photo-1568922799850-2e8b6e003a91?auto=format&fit=crop&w=800&q=80",
         taken: false
       },
       {
         name: "Whey Protein",
-        image: "https://images.unsplash.com/photo-1621996346565-08ccf999f44f",
-        taken: false
-      },
-      {
-        name: "Bola de Vôlei / Volleyball",
-        image: "https://images.unsplash.com/photo-1599058917211-bc3a8f3bc19a",
-        taken: false
-      },
-      {
-        name: "Bloqueador de Ruídos para Apartamentos / Noise Canceller",
-        image: "https://images.unsplash.com/photo-1585386959984-a4155224a7da",
-        taken: false
-      },
-      {
-        name: "Flores para os Novos Vizinhos / Flowers for New Neighbors",
-        image: "https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0",
-        taken: false
-      },
-      {
-        name: "Primeira Caixa de Cerveja / First Beer Crate",
-        image: "https://images.unsplash.com/photo-1598511720891-80be6b6faad7",
-        taken: false
-      },
-      {
-        name: "Roupa de Cama Gostosa pros Amigos / Comfy Guest Bedding",
-        image: "https://images.unsplash.com/photo-1615873968403-89e068629265",
-        taken: false
-      },
-      {
-        name: "Churrasqueira / BBQ Grill",
-        image: "https://images.unsplash.com/photo-1590080877035-33e9e2d8bc8d",
-        taken: false
-      },
-      {
-        name: "Designer (Consultoria) / Interior Design Help",
-        image: "https://images.unsplash.com/photo-1618221736457-7be3d7a8d90a",
-        taken: false
-      },
-      {
-        name: "Ajuda no Financiamento da Casa / Help with House Payments",
-        image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e",
-        taken: false
-      },
-      {
-        name: "Alguma Coisa Inusitada / Something Unexpected",
-        image: "https://images.unsplash.com/photo-1603899121265-3b35d2e0bc55",
-        taken: false
-      },
-      {
-        name: "Tóxicos e Entorpecentes (de mentira) / Fake Party Drugs",
-        image: "https://images.unsplash.com/photo-1581092335286-67d4b3c7faac",
-        taken: false
-      }
-    ];
-
-    function renderGifts() {
-      const container = document.getElementById("gift-list");
-      container.innerHTML = "";
-
-      gifts.forEach((gift, index) => {
-        const div = document.createElement("div");
-        div.className = "gift";
-        div.innerHTML = `
-          <img src="${gift.image}" alt="${gift.name}">
-          <h3>${gift.name}</h3>
-          <button class="${gift.taken ? 'taken' : 'available'}" ${gift.taken ? 'disabled' : ''} onclick="markAsTaken(${index})">
-            ${gift.taken ? 'Já foi escolhido / Taken' : 'Quero dar este / I’ll buy this'}
-          </button>
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    function markAsTaken(index) {
-      gifts[index].taken = true;
-      renderGifts();
-      window.open(paymentLink, "_blank");
-    }
-
-    renderGifts();
-  </script>
-</body>
-</html>
+        image: "https://images.unsplash.com/photo-1621996346565-08ccf999f44f?auto
