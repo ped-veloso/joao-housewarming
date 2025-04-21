@@ -64,12 +64,14 @@
 
   <h1>🎉 Chá de la Panella Joao bday</h1>
   <h2>🎁 Uma surpresa coletiva para um amigo muito querido</h2>
-  <p>O aniversário do João já passou, mas a intenca de dar um presente segue firme. Por isso, preparamos essa página com presentes simbólicos pra rechear a sua nova residencia. Escolha seu "produto" favorito ou envie uma contribuição direta.<br>
-     João’s birthday already passed, but we still want to surprise him with love, laughter, and gifts. This is our way to celebrate a friend who deserves it all. Pick a gift or send a contribution below.</p>
+  <p>O aniversário do João já passou, mas a nossa intencão de dar um presente pro nosso amigo segue firme. Por isso, preparamos essa página com presentes simbólicos pra rechear a sua nova residencia em Barcelona. Escolha seu "produto" favorito ou envie uma contribuição direta pro nosso fundo.<br>
+     João’s birthday already passed, but we’re still excited to give him something special. So we’ve set up this playful surprise list filled with symbolic gifts to warm up his new home in Barcelona. Pick your favorite item or contribute to the shared fund. This is our way to celebrate a friend who deserves it all. Pick a gift or send a contribution below.</p>
 
   <div class="donate">
     <p><strong>Pix:</strong> joao@email.com</p>
-    <p><a href="https://example.com" target="_blank">Ou pagar pelo PayPal | Or pay via PayPal</a></p>
+    <p><strong>Bizum:</strong> 634030162</p>
+    <p><strong>Revolut:</strong> ES1015830001169050504097<br>João Paulo Alasmar Cordeiro</p>
+    <p><a href="https://www.paypal.com/pool/9eayx44IJi?sr=wccr" target="_blank">Ou pagar pelo PayPal | Or pay via PayPal</a></p>
   </div>
 
   <div class="controls">
@@ -84,13 +86,28 @@
   <div class="gift-grid" id="gift-list"></div>
 
   <script>
-    const paymentLink = "https://example.com";
+    const paymentLink = "https://www.paypal.com/pool/9eayx44IJi?sr=wccr";
 
-    const gifts = window.gifts || [];
-    gifts.forEach(g => {
-      g.count = 0;
-      g.lastPurchased = null;
-    });
+    const gifts = [
+      {
+        name: "Churrasqueira / BBQ Grill",
+        image: "https://images.unsplash.com/photo-1590080877035-33e9e2d8bc8d?auto=format&fit=crop&w=800&q=80",
+        count: 0,
+        lastPurchased: null
+      },
+      {
+        name: "Areia de Ipanema / Ipanema Sand Souvenir",
+        image: "https://tse2.mm.bing.net/th?id=OIP.1p28rhILDaNvNl3-N_Ut2AHaE7&pid=Api",
+        count: 0,
+        lastPurchased: null
+      },
+      {
+        name: "Roupa de cama gostosa / Comfy Bedding",
+        image: "https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=800&q=80",
+        count: 0,
+        lastPurchased: null
+      }
+    ];
 
     function markAsPurchased(index) {
       gifts[index].count++;
@@ -104,7 +121,7 @@
       if (sortType === "popularity") {
         gifts.sort((a, b) => b.count - a.count);
       } else if (sortType === "recent") {
-        gifts.sort((a, b) => new Date(b.lastPurchased) - new Date(a.lastPurchased));
+        gifts.sort((a, b) => new Date(b.lastPurchased || 0) - new Date(a.lastPurchased || 0));
       } else {
         gifts.sort((a, b) => a.name.localeCompare(b.name));
       }
